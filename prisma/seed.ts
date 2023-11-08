@@ -2,43 +2,50 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-async function seedUsers() {
+async function seedDrinks() {
   try {
-    // Sample user data
-    const usersData = [
+    // Delete all existing drinks
+    await prisma.drink.deleteMany();
+
+    const drinksData = [
       {
-        email: 'user1@example.com',
-        firstName: 'John',
-        lastName: 'Doe',
-        password: 'password1', // Make sure to hash the password before storing it in production
+        name: 'Espresso',
+        ounces: 2,
+        description: 'Strong coffee',
+        price: 2.5,
+        imgSrc: '/drinkImages/espresso.jpg', // Use the path relative to the public directory
+        originalSource: 'CoffeeBeans Co.',
       },
       {
-        email: 'user2@example.com',
-        firstName: 'Jane',
-        lastName: 'Smith',
-        password: 'password2', // Make sure to hash the password before storing it in production
+        name: 'Latte',
+        ounces: 12,
+        description: 'Espresso with steamed milk',
+        price: 3.5,
+        imgSrc: '/drinkImages/latte.jpg', // Use the path relative to the public directory
+        originalSource: 'Coffee Haven',
       },
-      // Add more sample user data if needed
+      // Add more sample drink data if needed
     ];
 
-    // Insert users into the database
-    for (const userData of usersData) {
-      await prisma.user.create({
+    for (const drinkData of drinksData) {
+      await prisma.drink.create({
         data: {
-          email: userData.email,
-          firstName: userData.firstName,
-          lastName: userData.lastName,
-          password: userData.password,
+          name: drinkData.name,
+          ounces: drinkData.ounces,
+          description: drinkData.description,
+          price: drinkData.price,
+          imgSrc: drinkData.imgSrc,
+          originalSource: drinkData.originalSource,
         },
       });
     }
 
-    console.log('Sample users seeded successfully!');
+    console.log('Sample drinks seeded successfully!');
   } catch (error) {
-    console.error('Error seeding users:', error);
+    console.error('Error seeding drinks:', error);
   } finally {
-    await prisma.$disconnect(); // Disconnect Prisma client
+    await prisma.$disconnect();
   }
 }
 
-seedUsers();
+seedDrinks();

@@ -6,9 +6,9 @@ import styles from "./WelcomeMessage.module.css";
 
 function getGreetingMessage(session: Session | null): string {
   if (session) {
-    return `Welcome back ${session.user.name} to React Coffee!`;
+    return `Welcome back ${session.user.name} to Alex's Coffee Shop!`;
   }
-  return "Welcome to React Coffee!";
+  return "Welcome to Alex's Coffee Shop!";
 }
 
 export default function WelcomeMessage() {
@@ -19,7 +19,7 @@ export default function WelcomeMessage() {
     <section className={styles.message}>
       <h2>{greetingMessage}</h2>
       <p>
-        <Link href="/menu">Order fresh coffee to go now!</Link>
+        <Link href="/menu">Order fresh espresso based beverages now!</Link>
       </p>
     </section>
   );
