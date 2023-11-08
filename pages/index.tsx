@@ -12,13 +12,12 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Alex's Coffee Shop</title>
-        <meta
-          name="description"
-          content="Welcome to Alex's Coffee order now from our store!"
-          title="title"
-        />
-      </Head>
+  <title>Alexs Coffee Shop</title>
+  <meta
+    name="description"
+    content="Welcome to Alexs Coffee order now from our store!"
+  />
+</Head>
       <div className={styles.homeImage}>
         <Image
           alt="Coffee Shop Interior"
