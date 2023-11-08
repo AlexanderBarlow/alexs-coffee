@@ -3,6 +3,9 @@
   "version": "2.3.0",
   "description": "A mock up website of a coffee shop using Next.js(React & JavaScript)",
   "main": "next.config.js",
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -29,12 +32,12 @@
   },
   "homepage": "https://github.com/AmielCyber/react-coffee-shop#readme",
   "dependencies": {
-    "@prisma/client": "^4.11.0",
+    "@prisma/client": "^4.16.2",
     "@reduxjs/toolkit": "^1.8.5",
     "bcryptjs": "^2.4.3",
     "framer-motion": "^10.1.0",
     "mongodb": "^4.9.1",
-    "next": "^13.2.3",
+    "next": "^13.5.6",
     "next-auth": "^4.20.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -48,7 +51,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@types/bcryptjs": "^2.4.2",
-    "@types/node": "^18.7.16",
+    "@types/node": "^18.18.9",
     "@types/react": "^18.0.18",
     "@types/react-dom": "^18.0.6",
     "@typescript-eslint/eslint-plugin": "^5.36.2",
@@ -62,6 +65,7 @@
     "prettier": "2.7.1",
     "prisma": "^4.11.0",
     "sharp": "^0.31.1",
-    "typescript": "^4.8.3"
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
   }
 }
